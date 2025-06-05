@@ -1,20 +1,19 @@
 import React, { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 import Header from "./Header";
-import { checkValidData } from "./utils/validate";
-import { auth } from "./utils/firebase";
+import {checkValidData} from '../utils/validate';
+import { auth } from "../utils/firebase";
 import { updateProfile } from "firebase/auth";
 import { useDispatch } from "react-redux";
-import { addUser } from "./utils/userSlice";
+import { addUser } from "../utils/userSlice";
 
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+import { AVATAR_URL, NETFLIX_BG_LOGO } from "../utils/constants";
 
 function Login() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const [isSingInForm, setIsSignInForm] = useState(true);
   const [errorMsg, setErrorMsg] = useState("");
   const email = useRef(null);
@@ -39,8 +38,7 @@ function Login() {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL:
-              "https://avatars.githubusercontent.com/u/138683335?s=400&u=d4fac559baf9f0555d2ee331722985ef9e36c427&v=4",
+            photoURL:AVATAR_URL
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -52,7 +50,7 @@ function Login() {
                   photoURL: photoURL,
                 })
               );
-              navigate("/browser");
+
               // ...
             })
             .catch((error) => {
@@ -62,7 +60,6 @@ function Login() {
             });
           console.log(user);
 
-          console.log("hai i am created");
           // ...
         })
         .catch((error) => {
@@ -80,8 +77,7 @@ function Login() {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
-          navigate("/browser");
+         
           // ...
         })
         .catch((error) => {
@@ -101,7 +97,7 @@ function Login() {
       <Header />
       <div className="absolute">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/af2fac72-d956-4952-8686-4d45d359d78c/web/IN-en-20250526-TRIFECTA-perspective_5db3e163-56f7-47c7-9a65-b79b9d76bf24_small.jpg"
+          src={NETFLIX_BG_LOGO}
           alt="Netflix Logo"
           className="" // Adjusted for better visibility
         />
