@@ -1,17 +1,20 @@
-import React, {useEffect} from 'react';
-import Header from './Header';
-import useNowPlayingMovies from '../hooks/useNowPlayingMovies';
-import MainContainer from './MainContainer';
-import SeconderyContainer from './SeconderyContainer';
-
-
+import React, { useEffect } from "react";
+import Header from "./Header";
+import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
+import MainContainer from "./MainContainer";
+import SeconderyContainer from "./SeconderyContainer";
+import usePopularMovies from "../hooks/usePopularMovies";
+import useUpcomingMovies from "../hooks/useUpcomingMovies";
 
 function Browser() {
-  useNowPlayingMovies()
- 
+  useNowPlayingMovies();
+  usePopularMovies();
+  useUpcomingMovies();
+
   return (
     <div className="">
-      <Header/>    
+      <Header />
+
       {/* 
       MainContainer
        - VedioBackground
@@ -21,9 +24,9 @@ function Browser() {
         - CardList * n
       
        */}
-       <MainContainer/>
-       <SeconderyContainer/>
+      <MainContainer />
+      <SeconderyContainer />
     </div>
   );
-}   
+}
 export default Browser;

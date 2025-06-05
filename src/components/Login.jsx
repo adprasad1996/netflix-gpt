@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import Header from "./Header";
-import {checkValidData} from '../utils/validate';
+import { checkValidData } from "../utils/validate";
 import { auth } from "../utils/firebase";
 import { updateProfile } from "firebase/auth";
 import { useDispatch } from "react-redux";
@@ -38,7 +38,7 @@ function Login() {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL:AVATAR_URL
+            photoURL: AVATAR_URL,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -55,12 +55,10 @@ function Login() {
             })
             .catch((error) => {
               setErrorMsg(error);
-              // An error occurred
-              // ...
+              
             });
-          console.log(user);
 
-          // ...
+          
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -77,7 +75,7 @@ function Login() {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-         
+
           // ...
         })
         .catch((error) => {

@@ -14,3 +14,7 @@ export const NOW_PLAYING_MOVIE_API = 'https://api.themoviedb.org/3/movie/now_pla
     
      
 }
+
+export const IMG_CON_URL = "https://image.tmdb.org/t/p/w780/";
+export const POPULAR_MOVIE_API = "https://api.themoviedb.org/3/movie/popular?page=1";
+export const UPCOMING_MOVIES_API = 'https://api.themoviedb.org/3/movie/upcoming?page=1';

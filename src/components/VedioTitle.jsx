@@ -4,7 +4,7 @@ import React from 'react';
 
 const VedioTitle = ({original_title,overview })=> {
     return (
-        <div className='w-screen aspect-video bg-gradient-to-r from-black text-white pt-40 px-12 absolute'>
+        <div className='w-screen aspect-video bg-gradient-to-r from-black text-white pt-60 px-12 absolute'>
             <h1 className='text-3xl font-bold'>{original_title}</h1>
             <p className='w-1/4 py-4'>{overview}</p>
             <div className='flex py-4'>
