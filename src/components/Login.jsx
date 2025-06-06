@@ -55,7 +55,8 @@ function Login() {
             })
             .catch((error) => {
               setErrorMsg(error);
-              
+              // An error occurred
+
             });
 
           
