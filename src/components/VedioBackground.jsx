@@ -10,9 +10,9 @@ const VedioBackground = ({ id }) => {
   
 
   return (
-    <div className= "w-screen">
+    <div className= "w-screen pt-14 ">
       <iframe
-        className="w-screen aspect-video "
+        className="w-screen aspect-video z-10 "
         src={
           "https://www.youtube.com/embed/" + movieTrailar?.key + "?&autoplay=1&mute=1"
         }

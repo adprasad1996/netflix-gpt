@@ -98,12 +98,12 @@ function Login() {
         <img
           src={NETFLIX_BG_LOGO}
           alt="Netflix Logo"
-          className="" // Adjusted for better visibility
+          className="h-screen object-cover" // Adjusted for better visibility
         />
       </div>
       <form
         onSubmit={handleSingInForm}
-        className="w-3/12 my-36 absolute pg-12 mx-auto right-0 left-0 text-white p-4 rounded-lg bg-opacity-80 bg-black"
+        className="w-2/3 md:w-3/12 my-36 absolute pg-12 mx-auto right-0 left-0 text-white p-4 rounded-lg bg-opacity-80 bg-black"
       >
         <h1 className="font-bold text-3xl py-4">
           {isSingInForm ? "Sign In" : "Sing Up"}

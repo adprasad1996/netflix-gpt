@@ -12,7 +12,7 @@ function Browser() {
   useUpcomingMovies();
 
   return (
-    <div className="">
+    <div >
       <Header />
 
       {/* 
