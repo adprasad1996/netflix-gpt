@@ -98,7 +98,8 @@ function Login() {
         <img
           src={NETFLIX_BG_LOGO}
           alt="Netflix Logo"
-          className="h-screen object-cover" // Adjusted for better visibility
+          className="h-screen w-screen object-cover md:object-center md:bg-cover"
+ // Adjusted for better visibility
         />
       </div>
       <form

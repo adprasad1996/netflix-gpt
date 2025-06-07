@@ -3,21 +3,18 @@ import Login from "./Login";
 import Browser from "./Browser";
 import { createBrowserRouter, RouterProvider } from "react-router-dom"; // Correct imports
 
-
 function Body() {
-
   const appRouter = createBrowserRouter([
     {
       path: "/",
       element: <Login />,
     },
+    { path: "/netflix-gpt/", element: <Login /> },
     {
       path: "/browser",
       element: <Browser />,
     },
   ]);
-
- 
 
   return (
     <div>
